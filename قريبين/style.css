@@ -1,11 +1,11 @@
 /* ========================================
-   استيراد الخطوط العربية من Google Fonts
-   ======================================== */
+Import Arabic Fonts from Google Fonts
+======================================== */
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap');
 
 /* ========================================
-   إعدادات عامة للصفحة
-   ======================================== */
+General Page Settings
+======================================== */
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +24,7 @@ body {
     overflow-x: hidden;
 }
 
-/* فيديو الخلفية */
+/* Background Video */
 .video-background {
     position: fixed;
     top: 0;
@@ -35,7 +35,7 @@ body {
     z-index: -2;
 }
 
-/* طبقة شفافة فوق الفيديو لتحسين القراءة */
+/* Overlay Layer for Better Readability */
 .video-overlay {
     position: fixed;
     top: 0;
@@ -47,7 +47,7 @@ body {
 }
 
 /* ========================================
-   الحاوية الرئيسية
+Main Container
    ======================================== */
 .container {
     width: 100%;
@@ -60,17 +60,18 @@ body {
     z-index: 1;
 }
 
-/* حاوية صفحات النماذج */
+/* Form Pages Container */
 .form-container {
     max-width: 900px;
 }
 
-/* تأثير الظهور التدريجي */
+/* Fade In Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -78,14 +79,14 @@ body {
 }
 
 /* ========================================
-   رأس الصفحة (Header)
+   Header
    ======================================== */
 header {
     text-align: center;
     margin-bottom: 50px;
 }
 
-/* شعار "قريبين" */
+/* "Qareebeen" Logo */
 .logo {
     font-family: 'Amiri', serif;
     font-size: 5rem;
@@ -96,7 +97,7 @@ header {
     letter-spacing: 2px;
 }
 
-/* النص التوضيحي */
+/* Subtitle Text */
 .subtitle {
     font-size: 1.2rem;
     color: white;
@@ -105,7 +106,7 @@ header {
 }
 
 /* ========================================
-   رسالة الترحيب (الصفحة الرئيسية)
+   Welcome Message (Home Page)
    ======================================== */
 .welcome-message {
     text-align: center;
@@ -126,7 +127,7 @@ header {
 }
 
 /* ========================================
-   بطاقات الجامعات (الصفحة الرئيسية)
+   University Cards (Home Page)
    ======================================== */
 .university-options {
     display: grid;
@@ -135,7 +136,7 @@ header {
     margin-bottom: 40px;
 }
 
-/* تصميم البطاقة */
+/* Card Design */
 .university-card {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
@@ -149,7 +150,7 @@ header {
     cursor: pointer;
 }
 
-/* تأثير عند التمرير */
+/* Hover Effect */
 .university-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
@@ -157,14 +158,14 @@ header {
     background: rgba(255, 255, 255, 0.25);
 }
 
-/* الأيقونة */
+/* Icon */
 .card-icon {
     font-size: 4rem;
     margin-bottom: 20px;
     filter: grayscale(0.3);
 }
 
-/* اللوجو */
+/* Logo */
 .card-logo {
     width: 150px;
     height: 150px;
@@ -179,15 +180,17 @@ header {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    border-radius: 80px;
+    background-color: #fff;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
-/* تكبير اللوجو عند التمرير */
+/* Zoom Logo on Hover */
 .university-card:hover .card-logo {
     transform: scale(1.1);
 }
 
-/* عنوان البطاقة */
+/* Card Title */
 .university-card h3 {
     font-size: 1.5rem;
     color: white;
@@ -196,7 +199,7 @@ header {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* نص البطاقة */
+/* Card Text */
 .university-card p {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.9);
@@ -205,7 +208,7 @@ header {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* زر الاختيار */
+/* Select Button */
 .select-btn {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -230,24 +233,38 @@ header {
 }
 
 /* ========================================
-   صفحات النماذج - رأس الصفحة
+   Form Pages - Header
    ======================================== */
 .form-header {
     position: relative;
     padding-bottom: 30px;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 
-/* زر العودة */
+.form-header .logo {
+    font-size: 3rem;
+    margin-bottom: 5px;
+    color: white;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+}
+
+.form-header .subtitle {
+    font-size: 1rem;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Back Button */
 .back-btn {
     position: absolute;
     top: 0;
     right: 0;
     padding: 10px 20px;
-    background: #f5f5f5;
+    background: white;
     color: #667eea;
     text-decoration: none;
     border-radius: 25px;
+    border: 2px solid #667eea;
     font-weight: 600;
     transition: all 0.3s ease;
 }
@@ -258,7 +275,7 @@ header {
     transform: translateX(5px);
 }
 
-/* معلومات الجامعة */
+/* University Info */
 .university-info {
     display: flex;
     align-items: center;
@@ -267,56 +284,50 @@ header {
     margin-bottom: 20px;
 }
 
+.university-info h1 {
+    font-size: 2rem;
+    color: white;
+    font-weight: 700;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+}
+
 .university-logo {
     width: 80px;
     height: 80px;
+    border-radius: 40px;
     object-fit: contain;
 }
 
-.university-info h1 {
-    font-size: 2rem;
-    color: #333;
-    font-weight: 700;
-}
-
-.form-header .logo {
-    font-size: 3rem;
-    margin-bottom: 5px;
-}
-
-.form-header .subtitle {
-    font-size: 1rem;
-}
-
 /* ========================================
-   النموذج - تصميم عام
+   Form - General Design
    ======================================== */
 .suggestion-form {
     margin-top: 40px;
 }
 
-/* قسم من النموذج */
+/* Form Section */
 .form-section {
-    background: #f9f9f9;
+    background: white;
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
 }
 
-/* عنوان القسم */
+/* Section Title */
 .section-title {
     font-size: 1.5rem;
-    color: #667eea;
+    color: #333;
     margin-bottom: 25px;
     font-weight: 700;
     padding-bottom: 10px;
-    border-bottom: 2px solid #667eea;
+    border-bottom: 2px solid #e0e0e0;
 }
 
 /* ========================================
-   حقول الإدخال
+   Input Fields
    ======================================== */
-/* صف يحتوي على عدة حقول */
+/* Row with Multiple Fields */
 .form-row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -324,14 +335,14 @@ header {
     margin-bottom: 20px;
 }
 
-/* مجموعة الحقل */
+/* Form Group */
 .form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
-/* تسمية الحقل */
+/* Field Label */
 .form-group label {
     font-size: 1rem;
     font-weight: 600;
@@ -339,13 +350,13 @@ header {
     margin-bottom: 8px;
 }
 
-/* علامة الحقل المطلوب */
+/* Required Field Indicator */
 .required {
     color: #e74c3c;
     font-weight: 700;
 }
 
-/* حقول النص والبريد الإلكتروني */
+/* Text and Email Fields */
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group select {
@@ -358,7 +369,7 @@ header {
     background: white;
 }
 
-/* تأثير التركيز */
+/* Focus Effect */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -367,12 +378,12 @@ header {
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
-/* قائمة الاختيار */
+/* Select List */
 .form-group select {
     cursor: pointer;
 }
 
-/* مربع النص الكبير */
+/* Textarea */
 .form-group textarea {
     padding: 15px;
     border: 2px solid #ddd;
@@ -383,23 +394,24 @@ header {
     resize: vertical;
     line-height: 1.6;
     transition: all 0.3s ease;
+    background: white;
 }
 
-/* نص مساعد */
+/* Helper Text */
 .helper-text {
     font-size: 0.85rem;
     color: #888;
     margin-top: 5px;
 }
 
-/* عداد الأحرف */
+/* Character Counter */
 .character-count {
     text-align: left;
     font-weight: 600;
 }
 
 /* ========================================
-   أزرار الاختيار (Radio Buttons)
+   Radio Buttons
    ======================================== */
 .radio-group {
     display: flex;
@@ -414,13 +426,13 @@ header {
     position: relative;
 }
 
-/* إخفاء الزر الأصلي */
+/* Hide Default Radio Button */
 .radio-label input[type="radio"] {
     position: absolute;
     opacity: 0;
 }
 
-/* تصميم مخصص للزر */
+/* Custom Radio Button Design */
 .radio-custom {
     width: 24px;
     height: 24px;
@@ -429,10 +441,11 @@ header {
     margin-left: 10px;
     position: relative;
     transition: all 0.3s ease;
+    background: white;
 }
 
-/* النقطة الداخلية */
-.radio-label input[type="radio"]:checked + .radio-custom::after {
+/* Inner Dot */
+.radio-label input[type="radio"]:checked+.radio-custom::after {
     content: '';
     position: absolute;
     width: 12px;
@@ -444,21 +457,21 @@ header {
     transform: translate(-50%, -50%);
 }
 
-/* نص الزر */
+/* Radio Button Text */
 .radio-text {
     font-size: 1.1rem;
     font-weight: 600;
     color: #333;
 }
 
-/* تأثير التمرير */
+/* Hover Effect */
 .radio-label:hover .radio-custom {
     border-color: #764ba2;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 /* ========================================
-   أزرار الإرسال والمسح
+   Submit and Reset Buttons
    ======================================== */
 .form-actions {
     display: flex;
@@ -467,7 +480,7 @@ header {
     margin-top: 40px;
 }
 
-/* زر الإرسال */
+/* Submit Button */
 .submit-btn {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -480,6 +493,7 @@ header {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    margin-bottom: 10px;
 }
 
 .submit-btn:hover {
@@ -491,7 +505,7 @@ header {
     transform: translateY(-1px);
 }
 
-/* زر المسح */
+/* Reset Button */
 .reset-btn {
     background: white;
     color: #e74c3c;
@@ -503,6 +517,7 @@ header {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-bottom: 10px;
 }
 
 .reset-btn:hover {
@@ -517,28 +532,28 @@ header {
 }
 
 /* ========================================
-   تذييل الصفحة (Footer)
+   Footer
    ======================================== */
 footer {
     text-align: center;
     padding-top: 30px;
     border-top: 2px solid rgba(255, 255, 255, 0.3);
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 0.9rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 /* ========================================
-   تأثيرات متحركة إضافية
+   Additional Animations
    ======================================== */
-/* البطاقة المختارة */
+/* Selected Card */
 .university-card.selected {
     border-color: rgba(255, 255, 255, 0.8);
     background: rgba(255, 255, 255, 0.3);
     animation: pulse 0.5s ease-in-out;
 }
 
-/* نبضة */
+/* Pulse Animation */
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
@@ -549,42 +564,42 @@ footer {
 }
 
 /* ========================================
-   التصميم المتجاوب (Responsive Design)
+   Responsive Design
    ======================================== */
-/* الأجهزة اللوحية والهواتف الكبيرة */
+/* Tablets and Large Phones */
 @media (max-width: 768px) {
-    /* تقليل الحواف */
+    /* Reduce Padding */
     .container {
         padding: 25px;
     }
 
-    /* تصغير الشعار */
+    /* Smaller Logo */
     .logo {
         font-size: 3.5rem;
     }
 
-    /* تصغير رسالة الترحيب */
+    /* Smaller Welcome Message */
     .welcome-message h2 {
         font-size: 1.5rem;
     }
 
-    /* جعل البطاقات في عمود واحد */
+    /* Single Column Cards */
     .university-options {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    /* تقليل حواف البطاقة */
+    /* Reduce Card Padding */
     .university-card {
         padding: 25px;
     }
 
-    /* تحسين عرض الفيديو على الموبايل */
+    /* Improve Video Display on Mobile */
     .video-background {
         object-fit: cover;
     }
 
-    /* تصميم رأس صفحة النموذج */
+    /* Form Header Design */
     .form-header .logo {
         font-size: 2.5rem;
     }
@@ -603,12 +618,12 @@ footer {
         height: 60px;
     }
 
-    /* جعل الحقول في عمود واحد */
+    /* Single Column Fields */
     .form-row {
         grid-template-columns: 1fr;
     }
 
-    /* تصغير أزرار الإجراءات */
+    /* Smaller Action Buttons */
     .form-actions {
         flex-direction: column;
     }
@@ -619,7 +634,7 @@ footer {
         padding: 15px 30px;
     }
 
-    /* تعديل زر العودة */
+    /* Adjust Back Button */
     .back-btn {
         position: static;
         display: inline-block;
@@ -627,9 +642,9 @@ footer {
     }
 }
 
-/* الهواتف الصغيرة */
+/* Small Phones */
 @media (max-width: 480px) {
-    /* تصغير الشعار أكثر */
+    /* Smaller Logo */
     .logo {
         font-size: 2.5rem;
     }
@@ -638,17 +653,17 @@ footer {
         font-size: 2rem;
     }
 
-    /* تقليل حواف الحاوية */
+    /* Reduce Container Padding */
     .container {
         padding: 15px;
     }
 
-    /* تقليل حواف الأقسام */
+    /* Reduce Section Padding */
     .form-section {
         padding: 20px;
     }
 
-    /* تصغير النصوص */
+    /* Smaller Text */
     .section-title {
         font-size: 1.2rem;
     }
@@ -663,7 +678,7 @@ footer {
         font-size: 0.9rem;
     }
 
-    /* تصغير أزرار الاختيار */
+    /* Smaller Radio Buttons */
     .radio-group {
         flex-direction: column;
         gap: 15px;
