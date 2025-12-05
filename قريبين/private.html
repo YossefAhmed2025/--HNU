@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قريبين - جامعة حلوان الأهلية</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* خلفية خاصة بصفحة جامعة حلوان الأهلية */
+        body {
+            background-image: url('HNUbackground.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        /* طبقة شفافة فوق الخلفية */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        /* تعديل ألوان النصوص والعناصر */
+        .form-header .logo {
+            color: white !important;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .form-header .subtitle {
+            color: white !important;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        .university-info h1 {
+            color: white !important;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: white !important;
+            border: 2px solid rgba(255, 255, 255, 0.4) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3) !important;
+            border-color: rgba(255, 255, 255, 0.6) !important;
+        }
+
+        /* جعل الأقسام شفافة */
+        .form-section {
+            background: rgba(255, 255, 255, 0.15) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* عناوين الأقسام */
+        .section-title {
+            color: white !important;
+            border-bottom-color: rgba(255, 255, 255, 0.5) !important;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        /* تسميات الحقول */
+        .form-group label {
+            color: white !important;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        /* النصوص المساعدة */
+        .helper-text {
+            color: rgba(255, 255, 255, 0.8) !important;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        /* حقول الإدخال */
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background: rgba(255, 255, 255, 0.9) !important;
+            border-color: rgba(255, 255, 255, 0.3) !important;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            background: white !important;
+            border-color: white !important;
+        }
+
+        /* أزرار الاختيار */
+        .radio-text {
+            color: white !important;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .radio-custom {
+            border-color: white !important;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .radio-label input[type="radio"]:checked + .radio-custom::after {
+            background: white !important;
+        }
+
+        /* التذييل */
+        footer {
+            border-top-color: rgba(255, 255, 255, 0.3) !important;
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+
+        /* الحد الفاصل في الرأس */
+        .form-header {
+            border-bottom-color: rgba(255, 255, 255, 0.3) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- ========== صفحة جامعة حلوان الأهلية ========== -->
+    <div class="container form-container">
+
+        <!-- ========== رأس الصفحة مع اللوجو واسم الجامعة ========== -->
+        <header class="form-header">
+            <a href="index.html" class="back-btn">← العودة</a>
+            <div class="university-info">
+                <img src="helwan-national.png" alt="جامعة حلوان الأهلية" class="university-logo">
+                <h1>جامعة حلوان الأهلية</h1>
+            </div>
+            <h2 class="logo">قريبين</h2>
+            <p class="subtitle">شاركنا اقتراحاتك وشكاويك</p>
+        </header>
+
+        <!-- ========== نموذج الاقتراحات والشكاوى ========== -->
+        <main>
+            <form id="suggestionForm" class="suggestion-form">
+
+                <!-- ========== قسم البيانات الشخصية ========== -->
+                <div class="form-section">
+                    <h3 class="section-title">البيانات الشخصية</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studentName">الاسم بالكامل <span class="required">*</span></label>
+                            <input type="text" id="studentName" name="studentName" required placeholder="أدخل اسمك الكامل">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="studentId">رقم الطالب <span class="required">*</span></label>
+                            <input type="text" id="studentId" name="studentId" required placeholder="أدخل رقمك الجامعي">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="faculty">الكلية <span class="required">*</span></label>
+                            <select id="faculty" name="faculty" required>
+                                <option value="">اختر الكلية</option>
+                                <option value="engineering">كلية الهندسة</option>
+                                <option value="business">كلية إدارة الأعمال</option>
+                                <option value="pharmacy">كلية الصيدلة</option>
+                                <option value="applied-arts">كلية الفنون التطبيقية</option>
+                                <option value="physical-therapy">كلية العلاج الطبيعي</option>
+                                <option value="other">أخرى</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="year">الفرقة الدراسية <span class="required">*</span></label>
+                            <select id="year" name="year" required>
+                                <option value="">اختر الفرقة</option>
+                                <option value="1">الفرقة الأولى</option>
+                                <option value="2">الفرقة الثانية</option>
+                                <option value="3">الفرقة الثالثة</option>
+                                <option value="4">الفرقة الرابعة</option>
+                                <option value="5">الفرقة الخامسة</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="example@hnu.edu.eg">
+                        <small class="helper-text">سيتم إرسال الرد على هذا البريد الإلكتروني</small>
+                    </div>
+                </div>
+
+                <!-- ========== قسم نوع المشاركة ========== -->
+                <div class="form-section">
+                    <h3 class="section-title">نوع المشاركة</h3>
+
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="type" value="suggestion" checked>
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">اقتراح</span>
+                        </label>
+
+                        <label class="radio-label">
+                            <input type="radio" name="type" value="complaint">
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">شكوى</span>
+                        </label>
+
+                        <label class="radio-label">
+                            <input type="radio" name="type" value="inquiry">
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">استفسار</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- ========== قسم المحتوى ========== -->
+                <div class="form-section">
+                    <h3 class="section-title">المحتوى</h3>
+
+                    <div class="form-group">
+                        <label for="title">العنوان <span class="required">*</span></label>
+                        <input type="text" id="title" name="title" required placeholder="عنوان مختصر للموضوع">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="content">التفاصيل <span class="required">*</span></label>
+                        <textarea id="content" name="content" required placeholder="اكتب تفاصيل اقتراحك أو شكواك هنا...&#10;&#10;نرجو منك توضيح الموضوع بشكل مفصل لنتمكن من خدمتك بشكل أفضل"></textarea>
+                        <small class="helper-text character-count">0 / 2000 حرف</small>
+                    </div>
+                </div>
+
+                <!-- ========== أزرار الإرسال ========== -->
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">إرسال المشاركة</button>
+                    <button type="reset" class="reset-btn">مسح البيانات</button>
+                </div>
+
+            </form>
+        </main>
+
+        <!-- ========== تذييل الصفحة ========== -->
+        <footer>
+            <p>© 2025 قريبين - جميع الحقوق محفوظة</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
