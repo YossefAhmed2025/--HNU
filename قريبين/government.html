@@ -8,81 +8,23 @@
     <style>
         /* خلفية عادية لصفحة جامعة حلوان الحكومية */
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            background-image: url('WhatsApp Image 2025-12-05 at 17.09.44_2414c0af.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
         }
 
-        /* إلغاء الشفافية من الأقسام */
-        .form-section {
-            background: white !important;
-            backdrop-filter: none !important;
-            -webkit-backdrop-filter: none !important;
-            border: 1px solid #e0e0e0 !important;
-        }
-
-        /* عناوين الأقسام */
-        .section-title {
-            color: #333 !important;
-            border-bottom-color: #e0e0e0 !important;
-            text-shadow: none !important;
-        }
-
-        /* تسميات الحقول */
-        .form-group label {
-            color: #333 !important;
-            text-shadow: none !important;
-        }
-
-        /* النصوص المساعدة */
-        .helper-text {
-            color: #888 !important;
-            text-shadow: none !important;
-        }
-
-        /* حقول الإدخال */
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            background: white !important;
-            border-color: #ddd !important;
-        }
-
-        /* أزرار الاختيار */
-        .radio-text {
-            color: #333 !important;
-            text-shadow: none !important;
-        }
-
-        .radio-custom {
-            border-color: #667eea !important;
-            background: white !important;
-        }
-
-        .radio-label input[type="radio"]:checked + .radio-custom::after {
-            background: #667eea !important;
-        }
-
-        /* زر العودة */
-        .back-btn {
-            background: white !important;
-            color: #667eea !important;
-            border: 2px solid #667eea !important;
-            backdrop-filter: none !important;
-        }
-
-        .back-btn:hover {
-            background: #667eea !important;
-            color: white !important;
-        }
-
-        /* الرأس */
-        .form-header {
-            border-bottom-color: rgba(255, 255, 255, 0.3) !important;
-        }
-
-        /* التذييل */
-        footer {
-            border-top-color: rgba(255, 255, 255, 0.3) !important;
-            color: rgba(255, 255, 255, 0.9) !important;
+        /* طبقة شفافة فوق الخلفية */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: -1;
         }
     </style>
 </head>
